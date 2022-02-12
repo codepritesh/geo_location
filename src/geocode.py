@@ -17,8 +17,8 @@ def geocode(rec_data):
         address = rec_data["address"]
         key_data = "&key="+key
         string_data_url = urllib.parse.quote(address)
-        print(url_str+string_data_url)
-        response_data = urllib.request.urlopen(url_str+string_data_url+key_data)
+        formed_url = url_str+string_data_url+key_data
+        response_data = urllib.request.urlopen(formed_url)
         response_code = response_data.getcode()
         if response_code != 200:
             return {"status": 0, "msg": response_code}
@@ -28,7 +28,9 @@ def geocode(rec_data):
         if "geometry" in response_data_text:
             dictdata = json.loads(response_data_text)
             print(dictdata["results"][0]["geometry"]["location"])
-            return {"status": 1, "location": dictdata["results"][0]["geometry"]["location"]}
+            return {"status": 1,
+                    "location": dictdata["results"][0]["geometry"]["location"]
+                    }
         else:
             return {"status": 0, "msg": "no location data found"}
 
