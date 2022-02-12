@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "38ef53f9-7678-43fd-bd6d-c3069938486b",
+		"name": "verloop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAddressDetails",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "Thisissupposedtobesecret",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"address\": \"# 3582,13 G Main Road, 4th Cross Rd, Indiranagar,Bengaluru, Karnataka 560008\",\n\"output_format\": \"json\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8123/verloop/api/v1/getAddressDetails",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8123",
+					"path": [
+						"verloop",
+						"api",
+						"v1",
+						"getAddressDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "google geocode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://maps.googleapis.com/maps/api/geocode/json?address=%23 3582,13 G Main Road, 4th Cross Rd, Indiranagar,Bengaluru, Karnataka 560008&key=AIzaSyCOD3KvY2DDzEfel-NZ_LKIWXr86EF_EUw",
+					"protocol": "https",
+					"host": [
+						"maps",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"maps",
+						"api",
+						"geocode",
+						"json"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "# 3582,13 G Main Road, 4th Cross Rd, Indiranagar,Bengaluru, Karnataka 560008"
+						},
+						{
+							"key": "key",
+							"value": "AIzaSyCOD3KvY2DDzEfel-NZ_LKIWXr86EF_EUw"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
