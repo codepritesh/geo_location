@@ -4,7 +4,7 @@ import json
 # import pprint
 # import os
 
-key = "AIzaSyCOD3KvY2DDzEfel-NZ_LKIWXr86EF_EUw"
+key = "asfsfdsfsdfsdff"
 # At the time of deployment we should use environment variable
 # key = os.environ.get("GEOCODE_API")
 
